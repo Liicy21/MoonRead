@@ -1,0 +1,87 @@
+{
+  "envId": "lexi-d9gb3ruct4fdb9d0e",
+  "functionRoot": "./cloudfunctions",
+  "functions": [
+    {
+      "name": "auth-register",
+      "timeout": 30,
+      "memorySize": 256,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": [
+        ".git",
+        "node_modules",
+        "**/*.md",
+        ".DS_Store"
+      ]
+    },
+    {
+      "name": "weread-bind",
+      "timeout": 60,
+      "memorySize": 256,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": [
+        ".git",
+        "node_modules",
+        "**/*.md",
+        ".DS_Store"
+      ]
+    },
+    {
+      "name": "weread-sync",
+      "timeout": 300,
+      "memorySize": 512,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": [
+        ".git",
+        "node_modules",
+        "**/*.md",
+        ".DS_Store"
+      ]
+    },
+    {
+      "name": "share-manager",
+      "timeout": 30,
+      "memorySize": 256,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": [
+        ".git",
+        "node_modules",
+        "**/*.md",
+        ".DS_Store"
+      ]
+    },
+    {
+      "name": "ai-assistant",
+      "timeout": 120,
+      "memorySize": 512,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": [
+        ".git",
+        "node_modules",
+        "**/*.md",
+        ".DS_Store"
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "name": "weread-sync-timer",
+      "type": "timer",
+      "functionName": "weread-sync",
+      "config": {
+        "cron": "0 0 * * * * *",
+        "enable": true
+      }
+    }
+  ]
+}
